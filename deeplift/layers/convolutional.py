@@ -4,7 +4,7 @@ from __future__ import absolute_import
 from .core import *
 from .helper_functions import conv1d_transpose_via_conv2d
 from . import helper_functions as hf
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 PoolMode = deeplift.util.enum(max='max', avg='avg')
 PaddingMode = deeplift.util.enum(same='SAME', valid='VALID')
