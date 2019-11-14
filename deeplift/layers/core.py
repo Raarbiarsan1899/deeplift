@@ -198,16 +198,16 @@ class Input(Layer):
         super(Input, self).__init__(**kwargs)
         self._num_dims = len(batch_shape)
         self._shape = batch_shape
-        self._activation_vars = tf.zeros(
+        self._activation_vars = tf.Variable(tf.zeros(
                                  dtype=tf.float32, shape=batch_shape,
-                                 name="inp_"+str(self.get_name()))
+                                 name="inp_"+str(self.get_name())))
 
     def get_activation_vars(self):
         return self._activation_vars
     
     def _build_reference_vars(self):
-        return tf.zeros(dtype=tf.float32,
-                shape=self._shape, name="ref_"+str(self.get_name()))
+        return tf.Variable(tf.zeros(dtype=tf.float32,
+                shape=self._shape, name="ref_"+str(self.get_name())))
 
     def get_mxts(self):
         #only one of get_pos_mxts and get_neg_mxts will be nonzero,
