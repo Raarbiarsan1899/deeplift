@@ -1,4 +1,4 @@
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 from deeplift.util import NEAR_ZERO_THRESHOLD
 
 def gt_mask(inp, val):
