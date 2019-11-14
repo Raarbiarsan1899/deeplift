@@ -5,7 +5,7 @@ from .core import *
 from .helper_functions import conv1d_transpose_via_conv2d
 from .convolutional import PaddingMode, DataFormat
 from . import helper_functions as hf
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 from tensorflow.python.ops import nn_grad
 
 
